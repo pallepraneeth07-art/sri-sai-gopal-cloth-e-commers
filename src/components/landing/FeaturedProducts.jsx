@@ -72,6 +72,41 @@ const PRODUCTS = [
     category: "New Arrivals",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/c40fc4b2a_generated_image.png",
   },
+  {
+    name: "Baby Sleeping Gown",
+    category: "Baby Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/d72611133_generated_image.png",
+  },
+  {
+    name: "Boys Denim Jacket",
+    category: "Boys Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/8eabac5fa_generated_image.png",
+  },
+  {
+    name: "Girls Salwar Kameez",
+    category: "Girls Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/e3c31c227_generated_image.png",
+  },
+  {
+    name: "Tissue Silk Saree",
+    category: "Sarees Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/e0609cc04_generated_image.png",
+  },
+  {
+    name: "Embroidered A-Line Kurti",
+    category: "New Arrivals",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/3e77c1001_generated_image.png",
+  },
+  {
+    name: "Boys Formal Shirt",
+    category: "Boys Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/d0d0ed8b5_generated_image.png",
+  },
+  {
+    name: "Tulle Party Frock",
+    category: "Girls Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/25d86663a_generated_image.png",
+  },
 ];
 
 export default function FeaturedProducts() {
