@@ -38,6 +38,30 @@ const PRODUCTS = [
     price: "₹749",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/5404d66c8_generated_b8410dad.png",
   },
+  {
+    name: "Floral Summer Frock",
+    category: "Girls Collection",
+    price: "₹1,199",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/7e3c9e577_generated_image.png",
+  },
+  {
+    name: "Mysore Silk Saree",
+    category: "Sarees Collection",
+    price: "₹4,299",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/8c6d50040_generated_image.png",
+  },
+  {
+    name: "Anarkali Kurti",
+    category: "New Arrivals",
+    price: "₹1,499",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/a6643f03e_generated_image.png",
+  },
+  {
+    name: "Girls Lehenga Choli",
+    category: "Girls Collection",
+    price: "₹2,499",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/6e87b540b_generated_image.png",
+  },
 ];
 
 export default function FeaturedProducts() {
