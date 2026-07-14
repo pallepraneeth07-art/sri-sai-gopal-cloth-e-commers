@@ -7,15 +7,15 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 lg:py-32 bg-beige">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center hidden">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
-          >
+            className="relative">
+            
             <div className="overflow-hidden rounded-2xl">
               <motion.img
                 initial={{ scale: 1.1 }}
@@ -24,8 +24,8 @@ export default function AboutSection() {
                 transition={{ duration: 1.5 }}
                 src={ABOUT_IMG}
                 alt="Interior of Sri Sai Gopal Cloth Store with warm inviting aisles"
-                className="w-full h-auto object-cover"
-              />
+                className="w-full h-auto object-cover" />
+              
             </div>
             {/* Decorative frame */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 rounded-2xl -z-10" />
@@ -36,8 +36,8 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
+            
             <span className="text-gold text-sm font-medium tracking-[0.25em] uppercase">Our Story</span>
             <h2 className="font-heading text-4xl md:text-5xl font-semibold text-maroon mt-4 mb-6">
               About <span className="italic font-normal">Sri Sai Gopal</span>
@@ -51,19 +51,19 @@ export default function AboutSection() {
 
             <div className="flex flex-wrap gap-8">
               {[
-                { number: "5+", label: "Categories" },
-                { number: "1000+", label: "Happy Families" },
-                { number: "100%", label: "Quality Assured" },
-              ].map((stat) => (
-                <div key={stat.label}>
+              { number: "5+", label: "Categories" },
+              { number: "1000+", label: "Happy Families" },
+              { number: "100%", label: "Quality Assured" }].
+              map((stat) =>
+              <div key={stat.label}>
                   <span className="font-heading text-3xl font-bold text-gold">{stat.number}</span>
                   <p className="text-maroon/60 text-sm mt-1">{stat.label}</p>
                 </div>
-              ))}
+              )}
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
