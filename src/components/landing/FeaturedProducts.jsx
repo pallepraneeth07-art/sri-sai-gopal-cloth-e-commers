@@ -5,61 +5,51 @@ const PRODUCTS = [
   {
     name: "Baby Cotton Romper",
     category: "Baby Collection",
-    price: "₹499",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/2ce694397_generated_ccc99999.png",
   },
   {
     name: "Boys Kurta Pajama Set",
     category: "Boys Collection",
-    price: "₹1,299",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/1a58656ce_generated_17bf2bc3.png",
   },
   {
     name: "Girls Party Dress",
     category: "Girls Collection",
-    price: "₹999",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/50f3d9dc9_generated_fc69bbbf.png",
   },
   {
     name: "Banarasi Silk Saree",
     category: "Sarees Collection",
-    price: "₹3,499",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/04f125073_generated_3c483e90.png",
   },
   {
     name: "Designer Kurti",
     category: "New Arrivals",
-    price: "₹899",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/b612f9231_generated_37fe58ef.png",
   },
   {
     name: "Boys Casual Set",
     category: "Boys Collection",
-    price: "₹749",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/5404d66c8_generated_b8410dad.png",
   },
   {
     name: "Floral Summer Frock",
     category: "Girls Collection",
-    price: "₹1,199",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/7e3c9e577_generated_image.png",
   },
   {
     name: "Mysore Silk Saree",
     category: "Sarees Collection",
-    price: "₹4,299",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/8c6d50040_generated_image.png",
   },
   {
     name: "Anarkali Kurti",
     category: "New Arrivals",
-    price: "₹1,499",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/a6643f03e_generated_image.png",
   },
   {
     name: "Girls Lehenga Choli",
     category: "Girls Collection",
-    price: "₹2,499",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/6e87b540b_generated_image.png",
   },
 ];
@@ -111,7 +101,6 @@ export default function FeaturedProducts() {
               <div className="px-1">
                 <span className="text-gold text-xs tracking-[0.15em] uppercase font-medium">{product.category}</span>
                 <h3 className="font-heading text-xl font-semibold text-maroon mt-1">{product.name}</h3>
-                <p className="text-maroon/70 font-semibold mt-1">{product.price}</p>
               </div>
             </motion.div>
           ))}
