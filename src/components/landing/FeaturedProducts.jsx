@@ -144,14 +144,7 @@ export default function FeaturedProducts() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
-                <div className="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/20 transition-all duration-500 flex items-center justify-center">
-                  <a
-                    href="#contact"
-                    className="bg-gold text-maroon font-semibold text-sm px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-400 hover:bg-gold/90"
-                  >
-                    Enquire Now
-                  </a>
-                </div>
+
               </div>
               <div className="px-1">
                 <span className="text-gold text-xs tracking-[0.15em] uppercase font-medium">{product.category}</span>
