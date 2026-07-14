@@ -52,6 +52,26 @@ const PRODUCTS = [
     category: "Girls Collection",
     image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/6e87b540b_generated_image.png",
   },
+  {
+    name: "Baby Essentials Set",
+    category: "Baby Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/a24c7baa9_generated_image.png",
+  },
+  {
+    name: "Boys Ethnic Sherwani",
+    category: "Boys Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/9394c7987_generated_image.png",
+  },
+  {
+    name: "Kanjivaram Silk Saree",
+    category: "Sarees Collection",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/e17719b87_generated_image.png",
+  },
+  {
+    name: "Floral Block Print Kurti",
+    category: "New Arrivals",
+    image: "https://media.base44.com/images/public/6a54f2960f2e4bfd13e03c5c/c40fc4b2a_generated_image.png",
+  },
 ];
 
 export default function FeaturedProducts() {
