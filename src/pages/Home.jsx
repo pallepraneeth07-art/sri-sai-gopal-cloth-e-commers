@@ -3,8 +3,8 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import SectionDivider from "@/components/landing/SectionDivider";
 import CategoryGallery from "@/components/landing/CategoryGallery";
-import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import FeaturedProducts from "@/components/landing/FeaturedProducts";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import AboutSection from "@/components/landing/AboutSection";
 import Testimonials from "@/components/landing/Testimonials";
 import StoreLocation from "@/components/landing/StoreLocation";
@@ -19,9 +19,9 @@ export default function Home() {
       <SectionDivider />
       <CategoryGallery />
       <SectionDivider />
-      <WhyChooseUs />
-      <SectionDivider />
       <FeaturedProducts />
+      <SectionDivider />
+      <WhyChooseUs />
       <SectionDivider />
       <AboutSection />
       <SectionDivider />
