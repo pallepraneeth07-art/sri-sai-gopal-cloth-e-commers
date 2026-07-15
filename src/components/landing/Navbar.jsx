@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Baby", href: "#categories" },
-  { label: "Boys", href: "#categories" },
-  { label: "Girls", href: "#categories" },
-  { label: "Sarees", href: "#categories" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" },
+  { label: "Shop", to: "/shop" },
+  { label: "Baby", to: "/shop?category=Baby" },
+  { label: "Boys", to: "/shop?category=Boys" },
+  { label: "Girls", to: "/shop?category=Girls" },
+  { label: "Sarees", to: "/shop?category=Sarees" },
+  { label: "About", to: "/#about" },
+  { label: "Contact", to: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -35,29 +37,29 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-gold text-2xl font-display font-bold">✦</span>
             <span className={`font-heading font-semibold transition-all duration-300 ${scrolled ? "text-lg text-maroon" : "text-xl text-maroon"}`}>
               Sri Sai Gopal
             </span>
-          </a>
+          </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-7">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.to}
                 className="text-sm font-medium tracking-wide text-maroon/80 hover:text-maroon transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gold group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#location"
+            <Link
+              to="/#location"
               className={`hidden lg:inline-flex items-center gap-2 font-medium text-sm tracking-wide rounded-full transition-all duration-300 ${
                 scrolled
                   ? "bg-maroon text-white px-5 py-2 hover:bg-maroon/90"
@@ -65,7 +67,7 @@ export default function Navbar() {
               }`}
             >
               Visit Store
-            </a>
+            </Link>
             <button
               onClick={() => setMobileOpen(true)}
               className="lg:hidden text-maroon p-2"
@@ -102,25 +104,28 @@ export default function Navbar() {
                 </div>
                 <div className="flex flex-col gap-6">
                   {NAV_ITEMS.map((item, i) => (
-                    <motion.a
+                    <motion.div
                       key={item.label}
-                      href={item.href}
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
-                      onClick={() => setMobileOpen(false)}
-                      className="text-lg font-heading font-semibold text-maroon hover:text-gold transition-colors"
                     >
-                      {item.label}
-                    </motion.a>
+                      <Link
+                        to={item.to}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-lg font-heading font-semibold text-maroon hover:text-gold transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
                   ))}
-                  <a
-                    href="#location"
+                  <Link
+                    to="/#location"
                     onClick={() => setMobileOpen(false)}
                     className="mt-4 inline-flex justify-center bg-maroon text-white rounded-full px-6 py-3 font-medium text-sm"
                   >
                     Visit Store
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
