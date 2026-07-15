@@ -26,26 +26,19 @@ export default function StoreLocation() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="rounded-2xl overflow-hidden h-80 lg:h-96 relative group cursor-pointer"
+            className="rounded-2xl overflow-hidden h-80 lg:h-96"
           >
-            <a
-              href="https://maps.app.goo.gl/hqQUQbgg2uAubVFM8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full h-full"
-            >
             <iframe
               title="Sri Sai Gopal Cloth Store Location"
-              src="https://maps.app.goo.gl/hqQUQbgg2uAubVFM8"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5!2d78.57!3d17.53!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDMxJzQ4LjAiTiA3OMKwMzQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale hover:grayscale-0 transition-all duration-500 pointer-events-none"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
             />
-            </a>
           </motion.div>
 
           {/* Details */}
@@ -70,7 +63,7 @@ export default function StoreLocation() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://maps.app.goo.gl/hqQUQbgg2uAubVFM8"
+                href="https://www.google.com/maps/dir/?api=1&destination=17.53,78.57"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-maroon font-semibold text-sm rounded-full px-6 py-3.5 hover:bg-gold/90 transition-all group"
