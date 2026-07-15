@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle, Truck } from "lucide-react";
+import { ArrowLeft, CheckCircle, Truck, MapPin } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useToast } from "@/components/ui/use-toast";
 import Navbar from "@/components/landing/Navbar";
@@ -14,6 +14,8 @@ export default function Checkout() {
   const [loading, setLoading] = useState(true);
   const [placing, setPlacing] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [locating, setLocating] = useState(false);
+  const [coordinates, setCoordinates] = useState(null);
   const [form, setForm] = useState({ customer_name: "", phone: "", email: "", address: "" });
 
   const productId = searchParams.get("product_id");
@@ -36,6 +38,38 @@ export default function Checkout() {
 
   const total = product ? product.price * quantity : 0;
 
+  const captureLocation = () => {
+    if (!navigator.geolocation) {
+      toast({ title: "Not supported", description: "Geolocation is not supported by your browser.", variant: "destructive" });
+      return;
+    }
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        setCoordinates({ latitude, longitude });
+        try {
+          const res = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+          );
+          const data = await res.json();
+          if (data.display_name) {
+            setForm((prev) => ({ ...prev, address: data.display_name }));
+            toast({ title: "Location captured!", description: "Your address has been auto-filled." });
+          }
+        } catch (err) {
+          toast({ title: "Coordinates captured", description: "Could not fetch address. Please enter manually." });
+        }
+        setLocating(false);
+      },
+      () => {
+        toast({ title: "Location denied", description: "Please allow location access or enter address manually.", variant: "destructive" });
+        setLocating(false);
+      },
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPlacing(true);
@@ -51,6 +85,7 @@ export default function Checkout() {
         quantity,
         size,
         total,
+        location: coordinates ? `${coordinates.latitude},${coordinates.longitude}` : "",
         payment_method: "Cash on Delivery",
         status: "pending",
       });
@@ -206,7 +241,27 @@ export default function Checkout() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-maroon mb-2">Delivery Address</label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-maroon">Delivery Address</label>
+                    <button
+                      type="button"
+                      onClick={captureLocation}
+                      disabled={locating}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gold hover:text-gold/80 transition-colors disabled:opacity-60"
+                    >
+                      {locating ? (
+                        <>
+                          <div className="w-3 h-3 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+                          Locating...
+                        </>
+                      ) : (
+                        <>
+                          <MapPin className="w-3.5 h-3.5" />
+                          Use My Location
+                        </>
+                      )}
+                    </button>
+                  </div>
                   <textarea
                     required
                     rows={3}
