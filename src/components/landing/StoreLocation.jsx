@@ -72,14 +72,14 @@ export default function StoreLocation() {
                 Get Directions
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:+916300782241"
                 className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-medium text-sm rounded-full px-6 py-3.5 hover:bg-white/10 transition-all"
               >
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/916300782241"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-green-600 text-white font-medium text-sm rounded-full px-6 py-3.5 hover:bg-green-700 transition-all"
