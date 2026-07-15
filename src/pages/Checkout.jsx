@@ -99,8 +99,7 @@ export default function Checkout() {
             </motion.div>
             <h1 className="font-heading text-3xl md:text-4xl font-semibold text-maroon mb-3">Order Placed Successfully!</h1>
             <p className="text-maroon/60 mb-8">
-              Thank you for your order. We'll call you shortly to confirm. Please keep{" "}
-              <span className="font-semibold text-maroon">₹{total}</span> ready for cash on delivery.
+              Thank you for your order. We'll call you shortly to confirm your order and delivery details.
             </p>
             <Link
               to="/shop"
@@ -141,20 +140,7 @@ export default function Checkout() {
                   <p className="text-maroon/50 text-sm">Qty: {quantity}</p>
                 </div>
               </div>
-              <div className="border-t border-maroon/10 pt-4 space-y-2">
-                <div className="flex justify-between text-sm text-maroon/60">
-                  <span>Subtotal</span>
-                  <span>₹{product.price * quantity}</span>
-                </div>
-                <div className="flex justify-between text-sm text-maroon/60">
-                  <span>Delivery</span>
-                  <span className="text-green-600">Free</span>
-                </div>
-                <div className="flex justify-between font-semibold text-maroon text-lg pt-2 border-t border-maroon/10">
-                  <span>Total</span>
-                  <span>₹{total}</span>
-                </div>
-              </div>
+
               <div className="mt-6 flex items-center gap-3 bg-green-50 rounded-xl p-4">
                 <Truck className="w-5 h-5 text-green-600 flex-shrink-0" />
                 <div>
@@ -225,7 +211,7 @@ export default function Checkout() {
                 {placing ? (
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <>Place Order (COD) • ₹{total}</>
+                  <>Place Order (COD)</>
                 )}
               </button>
             </motion.form>

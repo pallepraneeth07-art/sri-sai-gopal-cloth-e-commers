@@ -59,8 +59,6 @@ export default function ProductDetail() {
     );
   }
 
-  const hasDiscount = product.original_price && product.original_price > product.price;
-
   return (
     <div className="min-h-screen bg-beige">
       <Navbar />
@@ -89,17 +87,6 @@ export default function ProductDetail() {
             >
               <span className="text-gold text-xs tracking-[0.15em] uppercase font-medium">{product.category}</span>
               <h1 className="font-heading text-3xl md:text-4xl font-semibold text-maroon mt-2 mb-4">{product.name}</h1>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl font-semibold text-maroon">₹{product.price}</span>
-                {hasDiscount && (
-                  <>
-                    <span className="text-maroon/40 text-lg line-through">₹{product.original_price}</span>
-                    <span className="text-green-600 text-sm font-medium">
-                      {Math.round((1 - product.price / product.original_price) * 100)}% Off
-                    </span>
-                  </>
-                )}
-              </div>
 
               {product.description && (
                 <p className="text-maroon/60 leading-relaxed mb-6">{product.description}</p>
