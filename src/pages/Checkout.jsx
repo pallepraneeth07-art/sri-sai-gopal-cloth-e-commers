@@ -89,8 +89,19 @@ export default function Checkout() {
         payment_method: "Cash on Delivery",
         status: "pending",
       });
+      const message = `*New Order - Sri Sai Gopal Cloth Store*\n\n` +
+        `*Name:* ${form.customer_name}\n` +
+        `*Phone:* ${form.phone}\n` +
+        (form.email ? `*Email:* ${form.email}\n` : "") +
+        `*Address:* ${form.address}\n\n` +
+        `*Product:* ${product.name}\n` +
+        (size ? `*Size:* ${size}\n` : "") +
+        `*Quantity:* ${quantity}\n` +
+        `*Total:* ₹${total}\n` +
+        `*Payment:* Cash on Delivery`;
+      window.open(`https://wa.me/916300782241?text=${encodeURIComponent(message)}`, "_blank");
       setSuccess(true);
-      toast({ title: "Order Placed!", description: "We'll confirm your order via phone." });
+      toast({ title: "Order Placed!", description: "Order details sent to WhatsApp." });
     } catch (err) {
       toast({ title: "Error", description: "Could not place order. Please try again.", variant: "destructive" });
     }
